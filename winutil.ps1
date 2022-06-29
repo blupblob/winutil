@@ -412,7 +412,16 @@ $WPFinstall.Add_Click({
     If ( $WPFInstallzoom.IsChecked -eq $true ) { 
         $wingetinstall.Add("Zoom.Zoom")
         $WPFInstallzoom.IsChecked = $false
+    }
+    If ( $WPFInstallzoom.IsChecked -eq $true ) { 
+        $wingetinstall.Add("Fortinet.FortiClientVPN")
+        $WPFInstallzoom.IsChecked = $false
+    }
+    If ( $WPFInstallzoom.IsChecked -eq $true ) { 
+        $wingetinstall.Add("Microsoft.Office")
+        $WPFInstallzoom.IsChecked = $false
     }    
+ 
 
     # Install all winget programs in new window
     $wingetinstall.ToArray()
