@@ -269,10 +269,10 @@ $WPFinstall.Add_Click({
         $wingetinstall.Add("HandBrake.HandBrake")
         $WPFInstallhandbrake.IsChecked = $false
     }      
-    If ( $WPFInstallhexchat.IsChecked -eq $true ) { 
-        $wingetinstall.Add("HexChat.HexChat")
-        $WPFInstallhexchat.IsChecked = $false
-    }       
+#     If ( $WPFInstallhexchat.IsChecked -eq $true ) { 
+#         $wingetinstall.Add("HexChat.HexChat")
+#         $WPFInstallhexchat.IsChecked = $false
+#     }       
     If ( $WPFInstallhwinfo.IsChecked -eq $true ) { 
         $wingetinstall.Add("REALiX.HWiNFO")
         $WPFInstallhwinfo.IsChecked = $false
