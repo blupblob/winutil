@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WinUtility"
         mc:Ignorable="d"
-        Background="#777777"
+        Background="#ffffff"
         Title="WolfSense IT Security | Install Utility" Height="533" Width="786">
 	<Viewbox>
 		<Grid Background="#777777" ShowGridLines="False" Name="MainGrid">
