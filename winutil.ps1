@@ -413,13 +413,13 @@ $WPFinstall.Add_Click({
         $wingetinstall.Add("Zoom.Zoom")
         $WPFInstallzoom.IsChecked = $false
     }
-    If ( $WPFInstallzoom.IsChecked -eq $true ) { 
+    If ( $WPFInstallFortiClient.IsChecked -eq $true ) { 
         $wingetinstall.Add("Fortinet.FortiClientVPN")
-        $WPFInstallzoom.IsChecked = $false
+        $WPFInstallFortiClient.IsChecked = $false
     }
-    If ( $WPFInstallzoom.IsChecked -eq $true ) { 
+    If ( $WPFInstallM365.IsChecked -eq $true ) { 
         $wingetinstall.Add("Microsoft.Office")
-        $WPFInstallzoom.IsChecked = $false
+        $WPFInstallM365.IsChecked = $false
     }    
  
 
