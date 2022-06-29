@@ -5,6 +5,38 @@
     Version 0.0.1
 #>
 
+# geen winget ? no problemo
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.Application]::EnableVisualStyles()
+
+$ErrorActionPreference = 'SilentlyContinue'
+$wshell = New-Object -ComObject Wscript.Shell
+$Button = [System.Windows.MessageBoxButton]::YesNoCancel
+$ErrorIco = [System.Windows.MessageBoxImage]::Error
+If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
+	Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+	Exit
+}
+
+# GUI Specs
+Write-Host "Checking winget..."
+
+# Er wordt gecontroleerd of Winget is geinstalleerd
+if (Test-Path ~\AppData\Local\Microsoft\WindowsApps\winget.exe){
+    'Winget is geinstalleerd'
+}  
+else{
+    # Winget wordt geinstalleerd vanuit de Microsoft Store
+	Write-Host "Winget is niet gevonden, het installeren begint nu."
+    $ResultText.text = "`r`n" +"`r`n" + "Winget wordt geinstalleerd... Moment geduld a.u.b."
+	Start-Process "ms-appinstaller:?source=https://aka.ms/getwinget"
+	$nid = (Get-Process AppInstaller).Id
+	Wait-Process -Id $nid
+	Write-Host Winget Installed
+    $ResultText.text = "`r`n" +"`r`n" + "Winget is nu geinstalleerd"
+}
+Write-Host "Script is nog steeds in de Alfa fase. Conctact kan worden opgenomen via ict@wolfsense.nl"
+
 # $inputXML = Get-Content "MainWindow.xaml" #uncomment for development
 $inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/blupblob/winutil/main/MainWindow.xaml") #uncomment for Production
 
