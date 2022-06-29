@@ -393,10 +393,10 @@ $WPFinstall.Add_Click({
 #         $wingetinstall.Add("Microsoft.VisualStudio.2022.Community")
 #         $WPFInstallvisualstudio.IsChecked = $false
 #     }         
-    If ( $WPFInstallvivaldi.IsChecked -eq $true ) { 
-        $wingetinstall.Add("VivaldiTechnologies.Vivaldi")
-        $WPFInstallvivaldi.IsChecked = $false
-    }                              
+#     If ( $WPFInstallvivaldi.IsChecked -eq $true ) { 
+#         $wingetinstall.Add("VivaldiTechnologies.Vivaldi")
+#         $WPFInstallvivaldi.IsChecked = $false
+#     }                              
 #     If ( $WPFInstallvoicemeeter.IsChecked -eq $true ) { 
 #         $wingetinstall.Add("VB-Audio.Voicemeeter")
 #         $WPFInstallvoicemeeter.IsChecked = $false
@@ -420,6 +420,18 @@ $WPFinstall.Add_Click({
     If ( $WPFInstallM365.IsChecked -eq $true ) { 
         $wingetinstall.Add("Microsoft.Office")
         $WPFInstallM365.IsChecked = $false
+    }    
+    If ( $WPFInstallWebex.IsChecked -eq $true ) { 
+        $wingetinstall.Add("Cisco.WebexTeams")
+        $WPFInstallWebex.IsChecked = $false
+    }    
+    If ( $WPFInstallSpotify.IsChecked -eq $true ) { 
+        $wingetinstall.Add("Spotify.Spotify")
+        $WPFInstallSpotify.IsChecked = $false
+    }    
+   If ( $WPFInstallInsync.IsChecked -eq $true ) { 
+        $wingetinstall.Add("Insynchq.Insync")
+        $WPFInstallInsync.IsChecked = $false
     }    
  
 
