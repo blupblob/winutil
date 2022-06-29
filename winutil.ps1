@@ -1,12 +1,12 @@
 <#
 .NOTES
-   Author      : Chris Titus @christitustech
-   GitHub      : https://github.com/ChrisTitusTech
+   Author      : WolfSense IT Security
+   GitHub      : https://github.com/blupblop
     Version 0.0.1
 #>
 
 # $inputXML = Get-Content "MainWindow.xaml" #uncomment for development
-$inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/MainWindow.xaml") #uncomment for Production
+$inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/blupblop/winutil/main/MainWindow.xaml") #uncomment for Production
 
 $inputXML = $inputXML -replace 'mc:Ignorable="d"','' -replace "x:N",'N' -replace '^<Win.*', '<Window'
 [void][System.Reflection.Assembly]::LoadWithPartialName('presentationframework')
