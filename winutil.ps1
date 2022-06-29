@@ -37,6 +37,9 @@ else{
 }
 Write-Host "Script is nog steeds in de Alfa fase. Conctact kan worden opgenomen via ict@wolfsense.nl"
 
+Read-Host -Prompt "Druk op ENTER om door te gaan" 
+
+
 # $inputXML = Get-Content "MainWindow.xaml" #uncomment for development
 $inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/blupblob/winutil/main/MainWindow.xaml") #uncomment for Production
 
