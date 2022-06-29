@@ -28,6 +28,7 @@ if (Test-Path ~\AppData\Local\Microsoft\WindowsApps\winget.exe){
 else{
     # Winget wordt geinstalleerd vanuit de Microsoft Store
 	Write-Host "Winget is niet gevonden, het installeren begint nu."
+	Read-Host -Prompt "Druk op ENTER om door te gaan of CTRL+C om de installatie te stoppen" 
     $ResultText.text = "`r`n" +"`r`n" + "Winget wordt geinstalleerd... Moment geduld a.u.b."
 	Start-Process "ms-appinstaller:?source=https://aka.ms/getwinget"
 	$nid = (Get-Process AppInstaller).Id
