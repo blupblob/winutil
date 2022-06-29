@@ -34,7 +34,6 @@
 							<CheckBox Name="Installchrome" Content="Google Chrome" Margin="5,0"/>
 							<CheckBox Name="Installchromium" Content="Un-Googled Chromium" Margin="5,0"/>
 							<CheckBox Name="Installfirefox" Content="Firefox" Margin="5,0"/>
-							<CheckBox Name="Installvivaldi" Content="Vivaldi" Margin="5,0"/>
 
 							<Label Content="Communications" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installmatrix" Content="Matrix" Margin="5,0"/>
@@ -42,16 +41,15 @@
 							<CheckBox Name="Installteams" Content="Microsoft Teams" Margin="5,0"/>
 							<CheckBox Name="Installzoom" Content="Zoom Video Conference" Margin="5,0"/>
 							<CheckBox Name="InstallFortiClient" Content="Fortinet FortiClient VPN" Margin="5,0"/>
-
-							
+							<CheckBox Name="InstallWebexTeams" Content="Cisco Webex" Margin="5,0"/>
+							<CheckBox Name="Installteamviewer" Content="TeamViewer" Margin="5,0"/>
+							<CheckBox Name="Installanydesk" Content="AnyDesk" Margin="5,0"/>
 
 							<Label Content="Development" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installgithubdesktop" Content="GitHub Desktop" Margin="5,0"/>
 							<CheckBox Name="Installjava8" Content="OpenJDK Java 8" Margin="5,0"/>
 							<CheckBox Name="Installjava16" Content="OpenJDK Java 16" Margin="5,0"/>
 							<CheckBox Name="Installjava18" Content="Oracle Java 18" Margin="5,0"/>
-							<CheckBox Name="Installnodejs" Content="NodeJS" Margin="5,0"/>
-							<CheckBox Name="Installnodejslts" Content="NodeJS LTS" Margin="5,0"/>
 							<CheckBox Name="Installpython3" Content="Python3" Margin="5,0"/>
 							<CheckBox Name="Installsublime" Content="Sublime" Margin="5,0"/>
 							<CheckBox Name="Installvscode" Content="VS Code" Margin="5,0"/>
@@ -66,9 +64,10 @@
 							<CheckBox Name="Installnotepadplus" Content="Notepad++" Margin="5,0"/>
 							<CheckBox Name="Installsumatra" Content="Sumatra PDF" Margin="5,0"/>
 							<CheckBox Name="InstallM365" Content="Microsoft 365 Apps for Enterprise" Margin="5,0"/>
+							<CheckBox Name="InstallInsync" Content="Insync" Margin="5,0"/>
 
 
-							<Label Content="Pro Tools" FontSize="16" Margin="5,0"/>
+							<Label Content="Network Tools" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installadvancedip" Content="Advanced IP Scanner" Margin="5,0"/>
 							<CheckBox Name="Installmremoteng" Content="mRemoteNG" Margin="5,0"/>
 							<CheckBox Name="Installputty" Content="Putty" Margin="5,0"/>
@@ -77,30 +76,32 @@
 
 							<Label Content="Multimedia Tools" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installflameshot" Content="Flameshot (Screenshots)" Margin="5,0"/>
-							<CheckBox Name="Installfoobar" Content="Foobar2000 (Music Player)" Margin="5,0"/>
 							<CheckBox Name="Installgreenshot" Content="Greenshot (Screenshots)" Margin="5,0"/>
-							<CheckBox Name="Installmpc" Content="Media Player Classic (Video Player)" Margin="5,0"/>
 							<CheckBox Name="Installvlc" Content="VLC (Video Player)" Margin="5,0"/>
+							<CheckBox Name="InstallSpotify" Content="Spotify" Margin="5,0"/>
+
+
+							<Label Content="Overig" FontSize="16" Margin="5,0"/>
+<!-- 							<CheckBox Name="Installflameshot" Content="Flameshot (Screenshots)" Margin="5,0"/>
+ -->
 
 						</StackPanel>
 						<StackPanel Background="#777777" SnapsToDevicePixels="True" Grid.Column="2" Margin="10">
 							<Label Content="Utilities" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installsevenzip" Content="7-Zip" Margin="5,0"/>
-							<CheckBox Name="Installanydesk" Content="AnyDesk" Margin="5,0"/>
 							<CheckBox Name="Installautohotkey" Content="AutoHotkey" Margin="5,0"/>
 							<CheckBox Name="Installbitwarden" Content="Bitwarden" Margin="5,0"/>
-							<CheckBox Name="Installcpuz" Content="CPU-Z" Margin="5,0"/>
+<!-- 							<CheckBox Name="Installcpuz" Content="CPU-Z" Margin="5,0"/> -->
 							<CheckBox Name="Installetcher" Content="Etcher USB Creator" Margin="5,0"/>
 							<CheckBox Name="Installesearch" Content="Everything Search" Margin="5,0"/>
-							<CheckBox Name="Installgpuz" Content="GPU-Z" Margin="5,0"/>
+<!-- 							<CheckBox Name="Installgpuz" Content="GPU-Z" Margin="5,0"/> -->
 							<CheckBox Name="Installhwinfo" Content="HWInfo" Margin="5,0"/>
-							<CheckBox Name="Installkeepass" Content="KeePassXC" Margin="5,0"/>
+<!-- 							<CheckBox Name="Installkeepass" Content="KeePassXC" Margin="5,0"/> -->
 							<CheckBox Name="Installmalwarebytes" Content="MalwareBytes" Margin="5,0"/>
 							<CheckBox Name="Installnvclean" Content="NVCleanstall" Margin="5,0"/>
 							<CheckBox Name="Installpowertoys" Content="Microsoft Powertoys" Margin="5,0"/>
 							<CheckBox Name="Installrevo" Content="RevoUninstaller" Margin="5,0"/>
 							<CheckBox Name="Installrufus" Content="Rufus Imager" Margin="5,0"/>
-							<CheckBox Name="Installteamviewer" Content="TeamViewer" Margin="5,0"/>
 							<CheckBox Name="Installttaskbar" Content="Translucent Taskbar" Margin="5,0"/>
 							<CheckBox Name="Installtreesize" Content="TreeSize Free" Margin="5,0"/>
 							<CheckBox Name="Installwindirstat" Content="WinDirStat" Margin="5,0"/>
