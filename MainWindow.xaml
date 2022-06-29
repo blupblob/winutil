@@ -41,6 +41,8 @@
 							<CheckBox Name="Installsignal" Content="Signal" Margin="5,0"/>
 							<CheckBox Name="Installteams" Content="Microsoft Teams" Margin="5,0"/>
 							<CheckBox Name="Installzoom" Content="Zoom Video Conference" Margin="5,0"/>
+							<CheckBox Name="InstallFortiClient" Content="Fortinet FortiClient VPN" Margin="5,0"/>
+
 							
 
 							<Label Content="Development" FontSize="16" Margin="5,0"/>
@@ -63,6 +65,8 @@
 							<CheckBox Name="Installadobe" Content="Adobe Reader DC" Margin="5,0"/>
 							<CheckBox Name="Installnotepadplus" Content="Notepad++" Margin="5,0"/>
 							<CheckBox Name="Installsumatra" Content="Sumatra PDF" Margin="5,0"/>
+							<CheckBox Name="InstallM365" Content="Microsoft 365 Apps for Enterprise" Margin="5,0"/>
+
 
 							<Label Content="Pro Tools" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installadvancedip" Content="Advanced IP Scanner" Margin="5,0"/>
