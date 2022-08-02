@@ -1,3 +1,4 @@
+
 # geen winget ? no problemo
 Add-Type -AssemblyName System.Windows.Forms
 [System.Windows.Forms.Application]::EnableVisualStyles()
@@ -10,6 +11,9 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 	Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
 	Exit
 }
+
+### These apps are installed silently for all users ###
+# for msstore apps you need to specify the source like below
 
 $apps = @(
     @{name = "7zip.7zip" }
@@ -42,6 +46,7 @@ $hasAppInstaller = Get-AppxPackage -Name 'Microsoft.DesktopAppInstaller' | Selec
 $DesktopPath = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::Desktop)
 $errorlog = winget_error.log
 
+# Install Winget
     Write-Host -ForegroundColor Yellow "Checking if WinGet is installed"
     if (!$hasPackageManager) {
             if ($hasVCLibs.Version -lt "14.0.30035.0") {
@@ -69,7 +74,7 @@ $errorlog = winget_error.log
     		    Add-AppxPackage -Path $latestRelease.browser_download_url
                 Write-Host -ForegroundColor Green "WinGet successfully installed."
             }
-    
+    }
     else {
         Write-Host -ForegroundColor Green "WinGet is already installed. Skip..."
         }
@@ -84,7 +89,7 @@ $errorlog = winget_error.log
             Write-Host -ForegroundColor Yellow  "Install:" $app.name
             # MS Store apps
             if ($app.source -ne $null) {
-                winget install --exact --silent --accept-source-agreements --accept-package-agreements $app.name --source $app.source
+                winget install --exact --silent --accept-package-agreements --accept-source-agreements $app.name --source $app.source
                 if ($LASTEXITCODE -eq 0) {
                     Write-Host -ForegroundColor Green $app.name "successfully installed."
                 }
@@ -96,10 +101,10 @@ $errorlog = winget_error.log
                     Write-Host
                     Pause
                 }    
-            
+            }
             # All other Apps
             else {
-                winget install --exact --silent --scope machine --accept-source-agreements --accept-package-agreements $app.name
+                winget install --exact --silent --scope machine --accept-package-agreements --accept-source-agreements $app.name
                 if ($LASTEXITCODE -eq 0) {
                     Write-Host -ForegroundColor Green $app.name "successfully installed."
                 }
@@ -119,12 +124,4 @@ $errorlog = winget_error.log
     }
     Pause
     Clear-Host
-}
 
-### Finished ###
-function finish {
-    Write-Host
-    Write-Host -ForegroundColor Magenta  "Installation finished"
-    Write-Host
-    Pause
-}
