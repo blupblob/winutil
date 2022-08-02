@@ -34,23 +34,23 @@ else{
 Write-Output "Apps installeren"
 $apps = @(
     @{name = "7zip.7zip" },
-#   @{name = "Adobe.Acrobat.Reader.64-bit" },
-#   @{name = "Google.Chrome" },
+    @{name = "Adobe.Acrobat.Reader.64-bit" },
+    @{name = "Google.Chrome" },
 #   @{name = "Famatech.AdvancedIPScanner" },
     @{name = "Notepad++.Notepad++" },
-    @{name = "PuTTY.PuTTY" }
-#   @{name = "AnyDeskSoftwareGmbH.AnyDesk" },
-#   @{name = "TeamViewer.TeamViewer" },
-#   @{name = "Fortinet.FortiClientVPN" },
-#   @{name = "TeamViewer.TeamViewer" },
+    @{name = "PuTTY.PuTTY" },
+    @{name = "AnyDeskSoftwareGmbH.AnyDesk" },
+    @{name = "TeamViewer.TeamViewer" },
+   @{name = "Fortinet.FortiClientVPN" },
+   @{name = "TeamViewer.TeamViewer" },
 #   @{name = "Greenshot.Greenshot" },
 #   @{name = "Microsoft.dotnet" },
 #   @{name = "Microsoft.PowerShell" },
 #   @{name = "Microsoft.PowerToys" },
 #   @{name = "Microsoft.WindowsTerminal" },
 #   @{name = "Mozilla.Firefox" },
-#   @{name = "Microsoft.Office" },
-#   @{name = "Cisco.WebexTeams" },
+    @{name = "Microsoft.Office" },
+    @{name = "Cisco.WebexTeams" }
 #   @{name = "Zoom.Zoom" }
 );
 Foreach ($app in $apps) {
