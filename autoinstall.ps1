@@ -5,6 +5,14 @@
     Version 0.0.1
 #>
 
+$ErrorActionPreference = 'SilentlyContinue'
+$wshell = New-Object -ComObject Wscript.Shell
+$Button = [System.Windows.MessageBoxButton]::YesNoCancel
+$ErrorIco = [System.Windows.MessageBoxImage]::Error
+If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
+	Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+	Exit
+}
 
 # WinGet controle
 Write-Host "Kijken of Winget geinstalleerd is..."
@@ -26,24 +34,24 @@ else{
 Write-Output "Apps installeren"
 $apps = @(
     @{name = "7zip.7zip" },
-    @{name = "Adobe.Acrobat.Reader.64-bit" },
-    @{name = "Google.Chrome" },
-#    @{name = "Famatech.AdvancedIPScanner" },
+#   @{name = "Adobe.Acrobat.Reader.64-bit" },
+#   @{name = "Google.Chrome" },
+#   @{name = "Famatech.AdvancedIPScanner" },
     @{name = "Notepad++.Notepad++" },
-    @{name = "PuTTY.PuTTY" },
-#    @{name = "AnyDeskSoftwareGmbH.AnyDesk" },
-#    @{name = "TeamViewer.TeamViewer" },
-#    @{name = "Fortinet.FortiClientVPN" },
-#    @{name = "TeamViewer.TeamViewer" },
-#    @{name = "Greenshot.Greenshot" },
-#    @{name = "Microsoft.dotnet" },
-#    @{name = "Microsoft.PowerShell" },
-#    @{name = "Microsoft.PowerToys" },
-#    @{name = "Microsoft.WindowsTerminal" },
-#    @{name = "Mozilla.Firefox" },
-#    @{name = "Microsoft.Office" },
-#    @{name = "Cisco.WebexTeams" },
-#    @{name = "Zoom.Zoom" }
+    @{name = "PuTTY.PuTTY" }
+#   @{name = "AnyDeskSoftwareGmbH.AnyDesk" },
+#   @{name = "TeamViewer.TeamViewer" },
+#   @{name = "Fortinet.FortiClientVPN" },
+#   @{name = "TeamViewer.TeamViewer" },
+#   @{name = "Greenshot.Greenshot" },
+#   @{name = "Microsoft.dotnet" },
+#   @{name = "Microsoft.PowerShell" },
+#   @{name = "Microsoft.PowerToys" },
+#   @{name = "Microsoft.WindowsTerminal" },
+#   @{name = "Mozilla.Firefox" },
+#   @{name = "Microsoft.Office" },
+#   @{name = "Cisco.WebexTeams" },
+#   @{name = "Zoom.Zoom" }
 );
 Foreach ($app in $apps) {
     $listApp = winget list --exact -q $app.name
@@ -52,6 +60,6 @@ Foreach ($app in $apps) {
         winget install -e -h --accept-source-agreements --accept-package-agreements --id $app.name 
     }
     else {
-        Write-host "Skipping: " $app.name " (is al geinstalleerd)"
+        Write-host "Skipping: " $app.name " (already installed)"
     }
 }
