@@ -78,7 +78,6 @@ $errorlog = winget_error.log
     else {
         Write-Host -ForegroundColor Green "WinGet is already installed. Skip..."
         }
-    Pause
     Clear-Host
 
 ### Install Apps silent ###
@@ -99,7 +98,6 @@ $errorlog = winget_error.log
                     Write-Host -ForegroundColor Red $app.name "couldn't be installed."
                     Write-Host -ForegroundColor Yellow "Write in $DesktopPath\$errorlog"
                     Write-Host
-                    Pause
                 }    
             }
             # All other Apps
@@ -114,7 +112,6 @@ $errorlog = winget_error.log
                     Write-Host -ForegroundColor Red $app.name "couldn't be installed."
                     Write-Host -ForegroundColor Yellow "Write in $DesktopPath\$errorlog"
                     Write-Host
-                    Pause
                 }  
             }
         }
@@ -122,6 +119,5 @@ $errorlog = winget_error.log
             Write-Host -ForegroundColor Yellow "Skip installation of" $app.name
         }
     }
-    Pause
     Clear-Host
 
