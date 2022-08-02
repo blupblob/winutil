@@ -57,7 +57,7 @@ $errorlog = winget_error.log
     		    Add-AppxPackage -Path $latestRelease.browser_download_url
                 Write-Host -ForegroundColor Green "WinGet successfully installed."
             }
-    }
+    
     else {
         Write-Host -ForegroundColor Green "WinGet is already installed. Skip..."
         }
@@ -84,7 +84,7 @@ $errorlog = winget_error.log
                     Write-Host
                     Pause
                 }    
-            }
+            
             # All other Apps
             else {
                 winget install --exact --silent --scope machine --accept-source-agreements --accept-package-agreements $app.name
