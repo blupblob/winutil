@@ -57,7 +57,7 @@ Foreach ($app in $apps) {
     $listApp = winget list --exact -q $app.name
     if (![String]::Join("", $listApp).Contains($app.name)) {
         Write-host "Installeren: " $app.name
-	 Start-Process powershell.exe -Verb RunAs -ArgumentList "-command winget install -e --accept-source-agreements --accept-package-agreements --silent $app.name | Out-Host" -Wait -WindowStyle Maximized
+	 Start-Process powershell.exe -Verb RunAs -ArgumentList "-command winget install -e --accept-source-agreements --accept-package-agreements --silent $app.name | Out-Host" -Wait 
     #    winget install -e -h --accept-source-agreements --accept-package-agreements --id $app.name 
     }
     else {
