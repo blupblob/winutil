@@ -1,14 +1,3 @@
-# Created by Kugane
-
-
-### Here can you add apps that you want to configure during installation ###
-# just add the app id from winget
-$graphical = @(
-    @{name = "ClamWin.ClamWin" }
-);
-
-### These apps are installed silently for all users ###
-# for msstore apps you need to specify the source like below
 
 $apps = @(
     @{name = "7zip.7zip" }
