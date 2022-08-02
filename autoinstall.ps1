@@ -63,7 +63,6 @@ $errorlog = winget_error.log
         }
     Pause
     Clear-Host
-}
 
 ### Install Apps silent ###
     Write-Host -ForegroundColor Cyan "Installing new Apps"
